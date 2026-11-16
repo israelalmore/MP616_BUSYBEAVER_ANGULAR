@@ -1,0 +1,82 @@
+<main class="search-page">
+  <header class="topbar">
+    <a class="brand" routerLink="/" aria-label="Busy Beaver, inicio">
+      <svg viewBox="0 0 40 40" role="img" aria-label="Cruz farmacéutica">
+        <rect x="2" y="2" width="36" height="36" rx="11" class="brand-mark" />
+        <path d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z" class="brand-cross" />
+      </svg>
+      <span class="brand-copy">
+        <strong>Busy Beaver</strong>
+        <small>GESTIÓN DE DATOS SANITARIOS</small>
+      </span>
+    </a>
+    <a class="home-link" routerLink="/">Volver a Inicio</a>
+  </header>
+
+  <section class="search-content" aria-labelledby="search-title">
+    <p class="eyebrow">DIRECTORIO DE ENFERMERÍA</p>
+    <h1 id="search-title">Buscar por nombre</h1>
+    <p class="intro">Escribe el nombre o apellido de la enfermera y pulsa «Buscar».</p>
+
+    <form class="search-form" role="search" [formGroup]="form" (ngSubmit)="search()">
+      <label for="query" class="visually-hidden">Nombre</label>
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input
+          id="query"
+          type="search"
+          formControlName="query"
+          placeholder="Ej.: Mar"
+          autocomplete="off"
+        />
+      </div>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="results-header">
+      <p class="results-count" role="status">
+        @if (searchedTerm()) {
+          {{ results().length }} {{ results().length === 1 ? 'resultado' : 'resultados' }} para
+          «{{ searchedTerm() }}»
+        } @else {
+          Mostrando las {{ nurses.length }} enfermeras
+        }
+      </p>
+      @if (searchedTerm()) {
+        <button type="button" class="link-button" (click)="clear()">Limpiar búsqueda</button>
+      }
+    </div>
+
+    @if (results().length > 0) {
+      <ul class="results">
+        @for (nurse of results(); track nurse.id) {
+          <li class="nurse-card">
+            <span class="avatar" aria-hidden="true">{{ initials(nurse.name) }}</span>
+            <div class="nurse-copy">
+              <strong>{{ nurse.name }}</strong>
+              <span>{{ nurse.unit }}</span>
+            </div>
+            @switch (nurse.shift) {
+              @case ('Mañana') {
+                <span class="shift shift-morning">Mañana</span>
+              }
+              @case ('Tarde') {
+                <span class="shift shift-afternoon">Tarde</span>
+              }
+              @case ('Noche') {
+                <span class="shift shift-night">Noche</span>
+              }
+            }
+          </li>
+        }
+      </ul>
+    } @else {
+      <p class="empty" role="alert">
+        No se ha encontrado ninguna enfermera con el nombre «{{ searchedTerm() }}».
+      </p>
+    }
+  </section>
+</main>
