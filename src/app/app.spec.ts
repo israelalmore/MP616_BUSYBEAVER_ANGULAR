@@ -38,4 +38,17 @@ describe('App', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
   });
+
+  it('should navigate between Home and Search', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/search');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Buscar por nombre');
+
+    await router.navigateByUrl('/');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
+  });
 });
