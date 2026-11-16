@@ -25,4 +25,21 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
   });
+
+  it('navigates between Home and the nurse registry', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/registry');
+    fixture.detectChanges();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain(
+      'Equipo de enfermería',
+    );
+
+    await router.navigateByUrl('/');
+    fixture.detectChanges();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
+  });
 });

@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
 export class Home {
   protected readonly navigation = [
     { label: 'Acceso', path: '/login', icon: '↪' },
-    { label: 'Registro', path: '/registry', icon: '▤' },
+    { label: 'Lista de enfermeros', path: '/registry', icon: '▤' },
     { label: 'Buscar', path: '/search', icon: '⌕' },
   ];
 
