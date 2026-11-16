@@ -1,0 +1,294 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.registry {
+  min-height: 100vh;
+  padding: 0 clamp(20px, 7vw, 100px) 72px;
+  background:
+    radial-gradient(ellipse at 50% 65%, #e8f3ee 0, transparent 48%),
+    #f8faf8;
+}
+
+.topbar {
+  width: min(1080px, 100%);
+  display: flex;
+  min-height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e1e9e5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #173c4a;
+  text-decoration: none;
+}
+
+.brand svg {
+  width: 38px;
+  flex: 0 0 38px;
+}
+
+.brand-mark {
+  fill: #287c68;
+}
+
+.brand-cross {
+  fill: #fff;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.brand-copy strong {
+  font-size: 15px;
+}
+
+.brand-copy small {
+  color: #72877e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+nav a {
+  color: #49675e;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: #287c68;
+}
+
+nav a.active {
+  font-weight: 700;
+}
+
+.content {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding-top: 64px;
+}
+
+.heading {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #287c68;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  color: #173c4a;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+}
+
+.intro {
+  margin: 12px 0 0;
+  color: #637a72;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.list-summary {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 18px;
+  border: 1px solid #e1e9e5;
+  border-radius: 8px;
+  background: #fff;
+  color: #637a72;
+  font-size: 13px;
+}
+
+.summary-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 8px;
+  background: #e8f3ee;
+  color: #287c68;
+}
+
+.summary-icon svg {
+  width: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.list-summary strong {
+  color: #173c4a;
+}
+
+.summary-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: #e1e9e5;
+}
+
+.status {
+  margin: -4px 0 18px;
+  color: #287c68;
+  font-size: 13px;
+}
+
+.nurse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.nurse-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e1e9e5;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.nurse-card:hover {
+  transform: translateY(-2px);
+  border-color: #b7d5ca;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f3ee;
+  color: #287c68;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.favorite-button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #e1e9e5;
+  border-radius: 50%;
+  background: #fff;
+  color: #8a9b94;
+  cursor: pointer;
+}
+
+.favorite-button:hover,
+.favorite-button.is-favorite {
+  border-color: #287c68;
+  color: #287c68;
+}
+
+.favorite-button.is-favorite {
+  background: #e8f3ee;
+}
+
+.favorite-button svg {
+  width: 18px;
+  fill: currentColor;
+}
+
+.favorite-button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #8cc9b2;
+  outline-offset: 3px;
+}
+
+h2 {
+  margin: 0;
+  color: #173c4a;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.specialty {
+  display: inline-block;
+  margin: 11px 0 8px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: #edf5f1;
+  color: #287c68;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.department {
+  margin: 0;
+  color: #72877e;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .nurse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .content {
+    padding-top: 46px;
+  }
+
+  .nurse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .list-summary {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

@@ -8,8 +8,7 @@ describe('App', () => {
     await TestBed.configureTestingModule({
       imports: [App],
       providers: [provideRouter(routes)],
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   it('should create the app', () => {
@@ -23,7 +22,26 @@ describe('App', () => {
     await TestBed.inject(Router).navigateByUrl('/');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
+  });
+
+  it('navigates between Home and the nurse registry', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/registry');
+    fixture.detectChanges();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain(
+      'Equipo de enfermería',
+    );
+
+    await router.navigateByUrl('/');
+    fixture.detectChanges();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
   });
 
   it('should navigate between Home and Login', async () => {
@@ -32,11 +50,15 @@ describe('App', () => {
 
     await router.navigateByUrl('/login');
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Iniciar sesión');
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain(
+      'Iniciar sesión',
+    );
 
     await router.navigateByUrl('/');
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
   });
 
   it('should navigate between Home and Search', async () => {
@@ -45,10 +67,14 @@ describe('App', () => {
 
     await router.navigateByUrl('/search');
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Buscar por nombre');
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain(
+      'Buscar por nombre',
+    );
 
     await router.navigateByUrl('/');
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
   });
 });
