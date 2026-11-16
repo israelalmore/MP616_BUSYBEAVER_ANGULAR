@@ -25,4 +25,17 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
   });
+
+  it('should navigate between Home and Login', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/login');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Iniciar sesión');
+
+    await router.navigateByUrl('/');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('h1')?.textContent).toContain('Gestión de datos sanitarios');
+  });
 });
