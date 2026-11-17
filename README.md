@@ -56,18 +56,21 @@ Any unknown route redirects to Home. Every screen has a link back to Home.
 
 ## Project structure
 
+Components follow [Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/): small reusable pieces are combined into bigger ones, up to full pages.
+
 ```text
 src/
 ├── app/
-│   ├── home/          Home screen
-│   ├── nurse-list/    Nurse list screen
-│   ├── login/         Login screen
-│   ├── search/        Search screen
-│   ├── app.routes.ts  Route definitions
-│   └── app.ts         Root component (<router-outlet>)
+│   ├── atoms/          Basic UI elements: button, icon, image, input, label
+│   ├── molecules/      Groups of atoms: nurse-card, search-bar
+│   ├── organisms/      Complex sections: login-form, navigation-menu, nurse-list
+│   ├── templates/      Shared page layout (header + content): page-layout
+│   ├── pages/          One component per route: home, nurse-list, login, search
+│   ├── app.routes.ts   Route definitions
+│   └── app.ts          Root component (<router-outlet>)
 ├── index.html
 ├── main.ts
-└── styles.css         Global styles
+└── styles.css          Global styles
 ```
 
 ## Team
