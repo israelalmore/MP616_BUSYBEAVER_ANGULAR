@@ -1,0 +1,13 @@
+@if (compact()) {
+  <li class="compact-card nurse-card">
+    <app-image [initials]="initials(nurse().name)" />
+    <div class="nurse-copy"><strong>{{ nurse().name }}</strong><span>{{ nurse().unit }}</span></div>
+    <span class="shift" [class.shift-morning]="nurse().shift === 'Mañana'" [class.shift-afternoon]="nurse().shift === 'Tarde'" [class.shift-night]="nurse().shift === 'Noche'">{{ nurse().shift }}</span>
+  </li>
+} @else {
+  <article class="card nurse-card">
+    <div class="card-top"><app-image [initials]="initials(nurse().name + ' ' + (nurse().surname ?? ''))" /><button class="favorite-button" type="button" [class.is-favorite]="favorite()" [attr.aria-pressed]="favorite()" (click)="favoriteToggled.emit(nurse().id)"><app-icon name="star" /></button></div>
+    <h2>{{ nurse().name }} {{ nurse().surname }}</h2>
+    <p class="specialty">{{ nurse().specialty }}</p><p class="department">{{ nurse().department }}</p>
+  </article>
+}

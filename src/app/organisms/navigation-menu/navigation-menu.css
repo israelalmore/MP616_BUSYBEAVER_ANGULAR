@@ -1,0 +1,3 @@
+nav { display: flex; flex-wrap: wrap; gap: 28px; }
+a { color: #49675e; font-size: 13px; text-decoration: none; }
+a:hover { color: #287c68; text-decoration: underline; }

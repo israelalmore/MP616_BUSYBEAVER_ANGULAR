@@ -1,0 +1,5 @@
+<div class="nurse-grid">
+  @for (nurse of nurses(); track nurse.id) {
+    <app-nurse-card [nurse]="nurse" [favorite]="favorites().has(nurse.id)" (favoriteToggled)="favoriteToggled.emit($event)" />
+  }
+</div>

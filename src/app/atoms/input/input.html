@@ -1,0 +1,3 @@
+<input [id]="id()" [type]="type()" [value]="value()" [placeholder]="placeholder()"
+  [autocomplete]="autocomplete()" [disabled]="disabled"
+  (input)="updateValue($any($event.target).value)" (blur)="touched()" />

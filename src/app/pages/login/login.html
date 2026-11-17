@@ -1,0 +1,9 @@
+<app-page-layout>
+  <section class="login-content" aria-labelledby="login-title">
+    <div class="login-card">
+      <p class="eyebrow">ACCESO DE ENFERMERÍA</p><h1 id="login-title">Iniciar sesión</h1>
+      <p class="intro">Introduce las credenciales para acceder.</p>
+      <app-login-form [form]="form" [result]="loginResult()" [demoCredentials]="demoCredentials" (submitted)="login()" />
+    </div>
+  </section>
+</app-page-layout>

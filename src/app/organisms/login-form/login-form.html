@@ -1,0 +1,15 @@
+<form [formGroup]="form()" (ngSubmit)="submitted.emit()">
+  <app-label forId="email" text="Correo electrónico" />
+  <input id="email" type="email" autocomplete="username" formControlName="email" />
+  <app-label forId="password" text="Contraseña" />
+  <input id="password" type="password" autocomplete="current-password" formControlName="password" />
+  <button type="submit" (click)="submitted.emit()">Entrar</button>
+</form>
+@if (result() === 'success') { <p class="result success" role="status">Inicio de sesión correcto.</p> }
+@if (result() === 'error') { <p class="result error" role="alert">No se pudo iniciar sesión. Revisa el usuario y la contraseña.</p> }
+<aside class="demo-credentials" aria-label="Credenciales de demostración">
+  <p>Credenciales locales de prueba</p>
+  @for (credential of demoCredentials(); track credential.label) {
+    <div class="credential"><span>{{ credential.label }}</span><code>{{ credential.value }}</code></div>
+  }
+</aside>

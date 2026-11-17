@@ -1,0 +1,11 @@
+<app-page-layout [showNavigation]="true">
+  <section class="welcome" aria-labelledby="welcome-title">
+    <p class="eyebrow">INICIO</p>
+    <h1 id="welcome-title">Gestión de datos sanitarios</h1>
+    <p class="intro">Selecciona una opción del menú para continuar.</p>
+    <app-button (clicked)="isExploring.set(!isExploring())">
+      {{ isExploring() ? 'Cerrar ayuda' : 'Ayuda de navegación' }}
+    </app-button>
+    @if (isExploring()) { <p class="message" role="status">Usa el menú superior para acceder a las secciones disponibles.</p> }
+  </section>
+</app-page-layout>
