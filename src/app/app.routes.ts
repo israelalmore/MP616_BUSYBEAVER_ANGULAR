@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
-import { NurseList } from './nurse-list/nurse-list';
-import { Login } from './login/login';
-import { Search } from './search/search';
+import { Home } from './pages/home/home';
+import { NurseList } from './pages/nurse-list/nurse-list';
+import { Login } from './pages/login/login';
+import { Search } from './pages/search/search';
 
 export const routes: Routes = [
   { path: '', component: Home, title: 'Home | Busy Beaver' },

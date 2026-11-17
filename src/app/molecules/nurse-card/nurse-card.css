@@ -1,0 +1,16 @@
+.card { min-width: 0; padding: 22px; border: 1px solid #e1e9e5; border-radius: 8px; background: #fff; }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.favorite-button { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid #e1e9e5; border-radius: 50%; background: #fff; color: #8a9b94; cursor: pointer; }
+.favorite-button:hover, .favorite-button.is-favorite { border-color: #287c68; color: #287c68; }
+h2 { margin: 0; color: #173c4a; font-size: 17px; font-weight: 600; }
+.specialty { display: inline-block; margin: 11px 0 8px; padding: 5px 9px; border-radius: 4px; background: #edf5f1; color: #287c68; font-size: 11px; font-weight: 600; }
+.department { margin: 0; color: #72877e; font-size: 13px; }
+.compact-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid #e1e9e5; border-radius: 10px; background: #fff; text-align: left; }
+.compact-card app-image { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 11px; }
+.nurse-copy { display: grid; flex: 1; gap: 3px; }
+.nurse-copy strong { color: #173c4a; font-size: 15px; }
+.nurse-copy span { color: #637a72; font-size: 13px; }
+.shift { padding: 4px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.shift-morning { background: #e8f3ee; color: #1d6454; }
+.shift-afternoon { background: #fdf3e2; color: #8a5a12; }
+.shift-night { background: #e7eef3; color: #173c4a; }

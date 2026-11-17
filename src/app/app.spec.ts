@@ -27,6 +27,19 @@ describe('App', () => {
     );
   });
 
+  it('redirects unknown URLs to Home', async () => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+
+    await router.navigateByUrl('/unknown-page');
+    fixture.detectChanges();
+
+    expect(router.url).toBe('/');
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain(
+      'Gestión de datos sanitarios',
+    );
+  });
+
   it('navigates between Home and the nurse registry', async () => {
     const fixture = TestBed.createComponent(App);
     const router = TestBed.inject(Router);
