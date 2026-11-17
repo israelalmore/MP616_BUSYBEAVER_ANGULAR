@@ -1,0 +1,9 @@
+<app-page-layout>
+  <section class="search-content" aria-labelledby="search-title">
+    <p class="eyebrow">DIRECTORIO DE ENFERMERÍA</p><h1 id="search-title">Buscar por nombre</h1>
+    <p class="intro">Escribe el nombre o apellido de la enfermera y pulsa «Buscar».</p>
+    <app-search-bar [form]="form" (submitted)="search()" />
+    <div class="results-header"><p class="results-count" role="status">@if (searchedTerm()) { {{ results().length }} {{ results().length === 1 ? 'resultado' : 'resultados' }} para «{{ searchedTerm() }}» } @else { Mostrando las {{ nurses.length }} enfermeras }</p>@if (searchedTerm()) { <button type="button" class="link-button" (click)="clear()">Limpiar búsqueda</button> }</div>
+    @if (results().length > 0) { <ul class="results">@for (nurse of results(); track nurse.id) { <app-nurse-card [nurse]="nurse" [compact]="true" /> }</ul> } @else { <p class="empty" role="alert">No se ha encontrado ninguna enfermera con el nombre «{{ searchedTerm() }}».</p> }
+  </section>
+</app-page-layout>

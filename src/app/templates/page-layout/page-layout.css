@@ -1,0 +1,9 @@
+.page { min-height: 100vh; padding: 0 clamp(20px, 7vw, 100px) 72px; background: radial-gradient(ellipse at 50% 65%, #e8f3ee 0, transparent 48%), #f8faf8; }
+.topbar { width: min(1080px, 100%); display: flex; min-height: 88px; align-items: center; justify-content: space-between; gap: 24px; margin: 0 auto; border-bottom: 1px solid #e1e9e5; }
+.brand { display: flex; align-items: center; gap: 11px; color: #173c4a; text-decoration: none; }
+.brand-mark { width: 38px; flex: 0 0 38px; }.brand-mark rect { fill: #287c68; }.brand-mark path { fill: #fff; }
+.brand-copy { display: grid; gap: 3px; }
+.brand-copy strong { font-size: 15px; }
+.brand-copy small { color: #72877e; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.home-link { color: #49675e; font-size: 13px; text-decoration: none; }
+.home-link:hover { color: #287c68; text-decoration: underline; }

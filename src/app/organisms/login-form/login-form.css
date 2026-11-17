@@ -1,0 +1,11 @@
+:host { display: block; }
+form { display: grid; gap: 10px; }
+input { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid #ccd9d3; border-radius: 5px; background: #fff; color: #173c4a; font: inherit; }
+button { width: 100%; min-height: 43px; margin-top: 12px; border: 0; border-radius: 5px; background: #287c68; color: #fff; cursor: pointer; font: inherit; font-size: 13px; font-weight: 600; }
+.result { margin: 16px 0 0; padding: 11px 12px; border-radius: 5px; font-size: 13px; line-height: 1.5; }
+.success { background: #e8f3ee; color: #1d6454; }
+.error { background: #fbefed; color: #a13e35; }
+.demo-credentials { display: grid; gap: 9px; margin-top: 23px; padding: 14px; border-radius: 6px; background: #f3f7f5; }
+.demo-credentials > p { margin: 0 0 2px; color: #637a72; font-size: 11px; font-weight: 600; }
+.credential { display: flex; justify-content: space-between; gap: 12px; color: #49675e; font-size: 11px; }
+.credential code { color: #173c4a; font-size: 11px; }

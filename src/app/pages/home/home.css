@@ -1,0 +1,5 @@
+.welcome { display: grid; width: min(680px, 100%); min-height: calc(100vh - 89px); align-content: center; justify-items: center; gap: 20px; margin: 0 auto; padding: 60px 0 100px; text-align: center; }
+.eyebrow { margin: 0; color: #287c68; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+h1 { margin: 0; color: #173c4a; font-size: clamp(38px, 6vw, 62px); font-weight: 600; letter-spacing: -2px; line-height: 1.08; }
+.intro { max-width: 520px; margin: 0; color: #637a72; font-size: 17px; line-height: 1.7; }
+.message { max-width: 520px; margin: 0; color: #49675e; font-size: 14px; line-height: 1.7; }

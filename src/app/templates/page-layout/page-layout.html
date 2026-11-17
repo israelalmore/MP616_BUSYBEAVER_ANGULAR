@@ -1,0 +1,14 @@
+<div class="page">
+  <header class="topbar">
+    <a class="brand" routerLink="/" aria-label="Busy Beaver, inicio">
+      <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="Cruz sanitaria"><rect x="2" y="2" width="36" height="36" rx="11" /><path d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z" /></svg>
+      <span class="brand-copy"><strong>Busy Beaver</strong><small>GESTIÓN DE DATOS SANITARIOS</small></span>
+    </a>
+    @if (showNavigation()) {
+      <app-navigation-menu />
+    } @else {
+      <a class="home-link" routerLink="/">Volver a Inicio</a>
+    }
+  </header>
+  <ng-content />
+</div>

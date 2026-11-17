@@ -1,0 +1,5 @@
+<form class="search-form" role="search" [formGroup]="form()" (ngSubmit)="submitted.emit()">
+  <label class="visually-hidden" for="query">Nombre</label>
+  <div class="search-field"><app-icon name="search" /><app-input id="query" type="search" placeholder="Ej.: Mar" autocomplete="off" formControlName="query" /></div>
+  <app-button type="submit">Buscar</app-button>
+</form>
