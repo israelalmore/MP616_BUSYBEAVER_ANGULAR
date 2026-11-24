@@ -19,7 +19,14 @@ describe('NurseList', () => {
 
   it('displays every registered nurse, an icon, and navigation to Home', () => {
     const element = fixture.nativeElement as HTMLElement;
+    const illustration = element.querySelector('img') as HTMLImageElement;
 
+    expect(illustration.getAttribute('src')).toBe('/assets/images/equipo-enfermeria.webp');
+    expect(illustration.alt).toBe(
+      'Ilustración de un equipo diverso de cinco profesionales de enfermería con carpetas y fichas digitales',
+    );
+    expect(illustration.getAttribute('width')).toBe('396');
+    expect(illustration.getAttribute('height')).toBe('274');
     expect(element.querySelectorAll('.nurse-card')).toHaveLength(6);
     expect(element.querySelector('svg[role="img"]')).toBeTruthy();
     expect(element.querySelector('a[routerLink="/"]')).toBeTruthy();

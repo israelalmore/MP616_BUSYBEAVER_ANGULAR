@@ -1,9 +1,14 @@
 <app-page-layout>
   <section class="login-content" aria-labelledby="login-title">
     <div class="login-card">
-      <p class="eyebrow">ACCESO DE ENFERMERÍA</p><h1 id="login-title">Iniciar sesión</h1>
-      <p class="intro">Introduce las credenciales para acceder.</p>
-      <app-login-form [form]="form" [result]="loginResult()" [demoCredentials]="demoCredentials" (submitted)="login()" />
+      <div class="login-illustration">
+        <img src="/assets/images/acceso-seguro.webp" alt="Ilustración de un enfermero iniciando sesión en un portal sanitario protegido con escudo y candado" width="341" height="255">
+      </div>
+      <div class="login-details">
+        <p class="eyebrow">ACCESO DE ENFERMERÍA</p><h1 id="login-title">Iniciar sesión</h1>
+        <p class="intro">Introduce las credenciales para acceder.</p>
+        <app-login-form [form]="form" [result]="loginResult()" [demoCredentials]="demoCredentials" (submitted)="login()" />
+      </div>
     </div>
   </section>
 </app-page-layout>

@@ -23,6 +23,17 @@ describe('Login', () => {
     expect(component).toBeTruthy();
   });
 
+  it('renders the login illustration with descriptive text and intrinsic dimensions', () => {
+    const illustration = fixture.nativeElement.querySelector('img') as HTMLImageElement;
+
+    expect(illustration.getAttribute('src')).toBe('/assets/images/acceso-seguro.webp');
+    expect(illustration.alt).toBe(
+      'Ilustración de un enfermero iniciando sesión en un portal sanitario protegido con escudo y candado',
+    );
+    expect(illustration.getAttribute('width')).toBe('341');
+    expect(illustration.getAttribute('height')).toBe('255');
+  });
+
   it('shows a success message for the local demo credentials', () => {
     const email = fixture.nativeElement.querySelector('#email') as HTMLInputElement;
     const password = fixture.nativeElement.querySelector('#password') as HTMLInputElement;
