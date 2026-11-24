@@ -30,6 +30,14 @@ describe('Search', () => {
   });
 
   it('renders the icons and a link back to Home', () => {
+    const illustration = element.querySelector('img') as HTMLImageElement;
+
+    expect(illustration.getAttribute('src')).toBe('/assets/images/buscar-directorio.webp');
+    expect(illustration.alt).toBe(
+      'Ilustración de una enfermera usando una lupa para filtrar y buscar nombres en el directorio sanitario',
+    );
+    expect(illustration.getAttribute('width')).toBe('341');
+    expect(illustration.getAttribute('height')).toBe('258');
     expect(element.querySelector('svg[role="img"]')).toBeTruthy();
     expect(element.querySelector('.search-icon')).toBeTruthy();
     expect(element.querySelector('.home-link')?.getAttribute('href')).toBe('/');

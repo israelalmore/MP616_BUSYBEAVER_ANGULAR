@@ -15,7 +15,14 @@ describe('Home', () => {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
     const element = fixture.nativeElement as HTMLElement;
+    const illustration = element.querySelector('img') as HTMLImageElement;
 
+    expect(illustration.getAttribute('src')).toBe('/assets/images/inicio-hero.webp');
+    expect(illustration.alt).toBe(
+      'Ilustración de una enfermera y el castor Busy Beaver gestionando datos sanitarios con gráficos en pantalla',
+    );
+    expect(illustration.getAttribute('width')).toBe('407');
+    expect(illustration.getAttribute('height')).toBe('299');
     expect(element.querySelector('svg[role="img"]')).toBeTruthy();
     expect(Array.from(element.querySelectorAll('nav a')).map((link) => link.getAttribute('href'))).toEqual([
       '/login',
